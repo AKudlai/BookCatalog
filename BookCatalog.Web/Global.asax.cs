@@ -5,6 +5,12 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
+using BookCatalog.Web.Infrastructure;
+
+using Ninject;
+using Ninject.Modules;
+using Ninject.Web.Mvc;
+
 namespace BookCatalog.Web
 {
     public class MvcApplication : System.Web.HttpApplication
@@ -13,6 +19,12 @@ namespace BookCatalog.Web
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+
+            // Dependency injection
+            NinjectModule registrations = new NinjectRegistrations();
+            var kernel = new StandardKernel(registrations);
+            kernel.Unbind<ModelValidatorProvider>();
+            DependencyResolver.SetResolver(new NinjectDependencyResolver(kernel));
         }
     }
 }
