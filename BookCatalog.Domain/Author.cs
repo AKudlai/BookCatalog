@@ -14,11 +14,6 @@ namespace BookCatalog.Domain
 
         public int BookCount => Books.Count();
 
-        public ICollection<Book> Books { get; set; }
-
-        public Author()
-        {
-            Books = new List<Book>();
-        }
+        public virtual ICollection<Book> Books { get; set; }
     }
 }

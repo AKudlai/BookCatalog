@@ -13,7 +13,7 @@ namespace BookCatalog.DAL.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201807041312000_InitialMigration"; }
+            get { return "201808230946595_InitialMigration"; }
         }
         
         string IMigrationMetadata.Source

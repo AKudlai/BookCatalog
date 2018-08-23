@@ -13,11 +13,6 @@ namespace BookCatalog.Domain
 
         public int Rating { get; set; }
 
-        public ICollection<Author> Authors { get; set; }
-
-        public Book()
-        {
-            Authors = new List<Author>();
-        }
+        public virtual ICollection<Author> Authors { get; set; }
     }
 }
