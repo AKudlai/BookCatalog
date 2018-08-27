@@ -4,20 +4,18 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title Book Catalog</title>
-    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
-    <link href="@Url.Content("~/Content/bootstrap.min.css")" rel="stylesheet" type="text/css" />
-    <script src="@Url.Content("~/Scripts/modernizr-2.6.2.js")"></script>
+    @Styles.Render("~/Content/css/dataTables")
+    @Styles.Render("~/Content/css")
 
-    <script src="@Url.Content("~/Scripts/jquery-3.3.1.min.js")"></script>
-    <link href="@Url.Content("~/Content/bootstrap.min.css")" rel="stylesheet" />
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/datatables")
+    @Scripts.Render("~/bundles/modernizr")
 
-    <link href="@Url.Content("~/Content/DataTables/css/dataTables.bootstrap.min.css")" rel="stylesheet" />
-    <link href="@Url.Content("~/Content/DataTables/css/responsive.bootstrap.min.css")" rel="stylesheet" />
+    @Scripts.Render("~/bundles/appscripts")
 
-    <script src="@Url.Content("~/Scripts/DataTables/jquery.dataTables.min.js")"></script>
-    <script src="@Url.Content("~/Scripts/DataTables/dataTables.bootstrap4.min.js")"></script>
+    @RenderSection("scripts", required: false)
 
-    <script src="@Url.Content("~/Scripts/AppScripts/BookCatalog.js")"></script>
 
 </head>
 <body>

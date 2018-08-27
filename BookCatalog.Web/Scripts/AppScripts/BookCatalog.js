@@ -7,8 +7,8 @@ $(document).ready(function () {
         "orderMulti": false, // for disable multiple column at once
         "pageLength": 5,
 
-        "Ajax": {
-            "URL": "/Book/LoadData",
+        "ajax": {
+            "url": "/Book/LoadData",
             "type": "POST",
             "datatype": "json"
         },
