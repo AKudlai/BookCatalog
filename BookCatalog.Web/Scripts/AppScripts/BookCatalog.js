@@ -45,7 +45,13 @@ $(document).ready(function () {
             { "data": "Name", "name": "Name", "autoWidth": true },
             { "data": "PageCount", "name": "PageCount", "autoWidth": true },
             { "data": "Rating", "name": "Rating", "autoWidth": true },
-            { "data": "AuthorFullName", "name": "Author", "autoWidth": true },
+
+            {
+                "data": "Authors",
+                render: function (data, type, full) {
+                    return data.join(', ');
+                }
+            },
 
             {
                 "render": function (data, type, full, meta) {

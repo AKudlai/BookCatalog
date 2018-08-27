@@ -45,8 +45,8 @@ namespace BookCatalog.Web.Controllers
                                     Name = x.Name,
                                     PageCount = x.PageCount,
                                     Rating = x.Rating,
-                                    AuthorFullName = x.Authors.FirstOrDefault().FirstName + " " + x.Authors.FirstOrDefault().LastName
-            });
+                                    Authors = x.Authors.Select(f => f.FirstName + " " + f.LastName).ToArray()
+                });
 
             //Sorting  
             //if (!(string.IsNullOrEmpty(sortColumn) && string.IsNullOrEmpty(sortColumnDir)))

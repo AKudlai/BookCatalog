@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BookCatalog.Domain;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -15,6 +16,6 @@ namespace BookCatalog.Web.Models
 
         public int Rating { get; set; }
 
-        public string AuthorFullName { get; set; }
+        public string[] Authors { get; set; }
     }
 }
