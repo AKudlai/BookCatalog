@@ -43,6 +43,7 @@ namespace BookCatalog.Web.Controllers
                 .Select(x => new BookViewModel {
                                     BookId = x.BookId,
                                     Name = x.Name,
+                                    PublishDate = x.PublishDate,
                                     PageCount = x.PageCount,
                                     Rating = x.Rating,
                                     Authors = x.Authors.Select(f => f.FirstName + " " + f.LastName).ToArray()

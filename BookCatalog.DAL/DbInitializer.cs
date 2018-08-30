@@ -16,7 +16,8 @@ namespace BookCatalog.DAL
             context.Books.Add(new Book
             {
                 BookId = Guid.NewGuid(),
-                Name = "You Don't Know JS: ES6 & Beyond ",
+                Name = "You Don't Know JS: ES6 & Beyond",
+                PublishDate = 2014,
                 PageCount = 278,
                 Rating = 5,
                 Authors = new List<Author>
@@ -34,6 +35,7 @@ namespace BookCatalog.DAL
             {
                 BookId = Guid.NewGuid(),
                 Name = "High Performance JavaScript",
+                PublishDate = 2010,
                 PageCount = 242,
                 Rating = 4,
                 Authors = new List<Author>
@@ -51,6 +53,7 @@ namespace BookCatalog.DAL
             {
                 BookId = Guid.NewGuid(),
                 Name = "JavaScript Patterns",
+                PublishDate = 2010,
                 PageCount = 216,
                 Rating = 4,
                 Authors = new List<Author>
@@ -68,6 +71,7 @@ namespace BookCatalog.DAL
             {
                 BookId = Guid.NewGuid(),
                 Name = "Domain-Driven Design: Tackling Complexity in the Heart of Software",
+                PublishDate = 2003,
                 PageCount = 448,
                 Rating = 5,
                 Authors = new List<Author>
@@ -85,6 +89,7 @@ namespace BookCatalog.DAL
             {
                 BookId = Guid.NewGuid(),
                 Name = "Grokking Algorithms An Illustrated Guide For Programmers and Other Curious People",
+                PublishDate = 2015,
                 PageCount = 288,
                 Rating = 5,
                 Authors = new List<Author>
@@ -102,6 +107,7 @@ namespace BookCatalog.DAL
             {
                 BookId = Guid.NewGuid(),
                 Name = "CLR via C#",
+                PublishDate = 2006,
                 PageCount = 896,
                 Rating = 5,
                 Authors = new List<Author>
@@ -119,6 +125,7 @@ namespace BookCatalog.DAL
             {
                 BookId = Guid.NewGuid(),
                 Name = "Waltzing with Bears: Managing Risk on Software Projects",
+                PublishDate = 2003,
                 PageCount = 196,
                 Rating = 4,
                 Authors = new List<Author>
@@ -136,6 +143,7 @@ namespace BookCatalog.DAL
             {
                 BookId = Guid.NewGuid(),
                 Name = "Rework",
+                PublishDate = 2010,
                 PageCount = 208,
                 Rating = 4,
                 Authors = new List<Author>
@@ -159,6 +167,7 @@ namespace BookCatalog.DAL
             {
                 BookId = Guid.NewGuid(),
                 Name = "Antifragile: Things That Gain from Disorder",
+                PublishDate = 2012,
                 PageCount = 768,
                 Rating = 4,
                 Authors = new List<Author>
@@ -176,6 +185,7 @@ namespace BookCatalog.DAL
             {
                 BookId = Guid.NewGuid(),
                 Name = "Pro Git",
+                PublishDate = 2009,
                 PageCount = 574,
                 Rating = 4,
                 Authors = new List<Author>
@@ -193,6 +203,7 @@ namespace BookCatalog.DAL
             {
                 BookId = Guid.NewGuid(),
                 Name = "Algorithm Design",
+                PublishDate = 2005,
                 PageCount = 800,
                 Rating = 5,
                 Authors = new List<Author>
@@ -216,6 +227,7 @@ namespace BookCatalog.DAL
             {
                 BookId = Guid.NewGuid(),
                 Name = "Design Patterns via C#",
+                PublishDate = 2015,
                 PageCount = 288,
                 Rating = 5,
                 Authors = new List<Author>

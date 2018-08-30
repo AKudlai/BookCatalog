@@ -23,6 +23,7 @@ namespace BookCatalog.DAL.Migrations
                     {
                         BookId = c.Guid(nullable: false),
                         Name = c.String(),
+                        PublishDate = c.Int(nullable: false),
                         PageCount = c.Int(nullable: false),
                         Rating = c.Int(nullable: false),
                     })

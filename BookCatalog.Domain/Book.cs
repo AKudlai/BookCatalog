@@ -9,6 +9,8 @@ namespace BookCatalog.Domain
 
         public string Name { get; set; }
 
+        public int PublishDate { get; set; }
+
         public int PageCount { get; set; }
 
         public int Rating { get; set; }

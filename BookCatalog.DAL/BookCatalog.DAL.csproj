@@ -49,9 +49,9 @@
   <ItemGroup>
     <Compile Include="BookCatalogContext.cs" />
     <Compile Include="DbInitializer.cs" />
-    <Compile Include="Migrations\201808230946595_InitialMigration.cs" />
-    <Compile Include="Migrations\201808230946595_InitialMigration.Designer.cs">
-      <DependentUpon>201808230946595_InitialMigration.cs</DependentUpon>
+    <Compile Include="Migrations\201808291511134_InitialMigration.cs" />
+    <Compile Include="Migrations\201808291511134_InitialMigration.Designer.cs">
+      <DependentUpon>201808291511134_InitialMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -67,8 +67,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201808230946595_InitialMigration.resx">
-      <DependentUpon>201808230946595_InitialMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201808291511134_InitialMigration.resx">
+      <DependentUpon>201808291511134_InitialMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
