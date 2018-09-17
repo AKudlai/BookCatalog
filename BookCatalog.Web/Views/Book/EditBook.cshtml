@@ -1,0 +1,56 @@
+﻿@model BookCatalog.Domain.Book
+
+@{
+    Layout = null;
+}
+
+@using (Html.BeginForm("EditBook", "Book", FormMethod.Post, new { id = "popupForm" }))
+{
+    @Html.HiddenFor(b => b.BookId)
+    <div class="form-group">
+        <label>First Name</label>
+        @Html.TextBoxFor(b => b.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(b => b.Name)
+    </div>
+    <div class="form-group">
+        <label>Published</label>
+        @Html.TextBoxFor(b => b.PublishDate, new { @class = "form-control" })
+        @Html.ValidationMessageFor(b => b.PageCount)
+    </div>
+    <div class="form-group">
+        <label>Rating</label>
+        @Html.TextBoxFor(b => b.Rating, new { @class = "form-control" })
+        @Html.ValidationMessageFor(b => b.Rating)
+    </div>
+    <div class="form-group">
+        <label>Page Count</label>
+        @Html.TextBoxFor(b => b.PageCount, new { @class = "form-control" })
+        @Html.ValidationMessageFor(b => b.Rating)
+    </div>
+    <div>
+        <input type="submit" value="Save" />
+    </div>
+}
+
+<script type="text/javascript">
+    var $popupForm = $('#popupForm');
+
+    console.log();
+
+    $popupForm.removeData('validator');
+    $popupForm.removeData('unobtrusiveValidation');
+    $.validator.unobtrusive.parse('form');
+
+    $popupForm.on('submit', function (event) {
+        console.log("event", event);
+        event.preventDefault();
+        var form = this;
+        var url = form.action;
+
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: $(form).serialize()
+        });
+    });
+</script>

@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 
 using BookCatalog.Contracts;
+using BookCatalog.Domain;
 using BookCatalog.Web.Models;
 
 namespace BookCatalog.Web.Controllers
@@ -70,14 +71,6 @@ namespace BookCatalog.Web.Controllers
             return Json(new { draw = draw, recordsFiltered = recordsTotal, recordsTotal = recordsTotal, data = data });
         }
 
-        [HttpGet]
-        public ActionResult Edit(Guid? id)
-        {
-            var Book = unitOfWork.Books.Get(id);
-
-                    return View(Book);
-        }
-
         [HttpPost]
         public JsonResult DeleteBook(Guid? id)
         {
@@ -86,6 +79,30 @@ namespace BookCatalog.Web.Controllers
             unitOfWork.Books.Remove(id);
             unitOfWork.SaveChanges();
                     return Json(data: "Deleted", behavior: JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpGet]
+        public ActionResult EditBook(Guid? id)
+        {
+            var bookData = unitOfWork.Books.Get(id);
+
+            return View(bookData);
+        }
+
+        [HttpPost]
+        public ActionResult EditBook(Book book)
+        {
+            bool status = false;
+            if (ModelState.IsValid)
+            {
+                if (book != null)
+                   {
+                    unitOfWork.Books.Update(book);
+                   };
+                unitOfWork.SaveChanges();
+                status = true;
+            }
+            return new JsonResult { Data = new { status = status } };
         }
     }
 }

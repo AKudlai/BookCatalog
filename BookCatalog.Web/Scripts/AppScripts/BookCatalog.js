@@ -1,5 +1,5 @@
 $(document).ready(function () {
-        var table = $("#bookGrid").DataTable({
+    var bookTable = $("#bookGrid").DataTable({
 
         "serverSide": true, // for process server side
         "processing": true, // for show progress bar
@@ -16,15 +16,16 @@ $(document).ready(function () {
         "columns": [
             {
                 "className": 'details-control',
-                "orderable": false,
+                "searchable": false,
+                "sortable": false,
                 "data": null,
                 "defaultContent": ''
             },
-            { "title": "BookId", "data": "BookId", "searchable": false, "visible": false },
-            { "title": "Book Title", "data": "Name", "searchable": true },
-            { "title": "Published", "data": "PublishDate", "searchable": true },
-            { "title": "Page Count", "data": "PageCount", "searchable": true },
-            { "title": "Rating", "data": "Rating", "searchable": true },
+            { "title": "BookId", "data": "BookId", "visible": false },
+            { "title": "Book Title", "data": "Name", "autoWidth": true},
+            { "title": "Published", "data": "PublishDate", "autoWidth": true },
+            { "title": "Page Count", "data": "PageCount", "autoWidth": true },
+            { "title": "Rating", "data": "Rating", "autoWidth": true},
 
             {
                 "data": "Authors",
@@ -37,8 +38,10 @@ $(document).ready(function () {
             {   
                 "searchable": false,
                 "sortable": false,
-                "render": function (data, type, full, meta) {
-                    return '<a class="btn btn-info" href="/Book/Edit/' + full.BookId + '">Edit</a>';
+                "data": "BookId",
+                "width": "50px",
+                "render": function (data) {
+                    return '<a class="popup btn btn-primary" href="/Book/EditBook/' + data + '">Edit</a>';
                 }
             },
 
@@ -51,12 +54,55 @@ $(document).ready(function () {
             }
         ],
 
-        "lengthMenu": [[10, 25, 50, 100], [10, 25, 50, 100]]
+        "drawCallback": function () {
+
+            console.log("$('.tablecontainer a.popup')", $('.tablecontainer a.popup'));
+
+            // Edit book
+            $('.tablecontainer a.popup').on('click', function (e) {
+                e.preventDefault();
+                OpenPopup($(this).attr('href'));
+            });
+        }
     });
+
+    function OpenPopup(pageUrl) {
+        var $pageContent = $('<div/>');
+        var $dialog;
+
+        $pageContent.load(pageUrl, function (response) {
+
+            var $popupForm = $('#popupForm', $pageContent);
+
+            $popupForm.on('submit', function (event) {
+                event.preventDefault();
+
+                $dialog.dialog('close');
+                bookTable.ajax.reload();
+
+            });
+        });
+
+        $dialog = $('<div class="popupWindow" style="overflow:auto"></div>').html($pageContent);
+        $dialog.dialog({
+                draggable: false,
+                autoOpen: false,
+                resizable: false,
+                model: true,
+                title: 'Edit book',
+                height: 550,
+                width: 600,
+                close: function () {
+                    $dialog.dialog('destroy').remove();
+                }
+            });
+
+        $dialog.dialog('open');
+    }
 
     $('#bookGrid tbody').on('click', 'td.details-control', function () {
         var tr = $(this).closest('tr');
-        var row = table.row(tr);
+        var row = bookTable.row(tr);
 
         if (row.child.isShown()) {
             // This row is already open - close it
@@ -111,8 +157,8 @@ function Delete(BookId) {
     var url = 'Book/DeleteBook';
     $.post(url, { id: BookId }, function (data) {
         if (data === "Deleted") {
-            oTable = $('#bookGrid').DataTable();
-            oTable.draw();
+            bookTable = $('#bookGrid').DataTable();
+            bookTable.draw();
         }
         else {
             alert("Something Went Wrong!");

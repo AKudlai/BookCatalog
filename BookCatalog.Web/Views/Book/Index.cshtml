@@ -1,40 +1,55 @@
 ﻿<style>
 
+    .table-container {}
+    .table-container .dataTables_wrapper.form-inline {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .table-container tr.even {
+        background-color: #eee;
+    }
+    .table-container tr:not(:first-child) > td {
+        border-top: 1px solid #ddd;
+    }
+    table.dataTable thead .sorting {
+        white-space: nowrap;
+    }
+
+    .dataTables_wrapper .dataTables_length input,
+    .dataTables_wrapper .dataTables_length select {
+        margin: 0 0.5em;
+    }
+
+
+
     td.details-control {
         background: url('../../Content/DataTables/images/details_open.png') no-repeat center center;
         cursor: pointer;
     }
 
-    tr.details td.details-control {
+    tr.shown td.details-control {
         background: url('../../Content/DataTables/images/details_close.png') no-repeat center center;
     }
 
+    span.field-validation-error {
+        color: red;
+    }
 </style>
-
-
-<div class="row">
-    <div class="col-md-12">
-        <div class="panel panel-primary list-panel" id="list-panel">
-            <div class="panel-body">
-                <table id="bookGrid" class="table table-striped table-bordered" style="width:100%;">
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th>BookId</th>
-                            <th>Name</th>
-                            <th>Published</th>
-                            <th>PageCount</th>
-                            <th>Rating</th>
-                            <th>Author</th>
-                            <th>Edit</th>
-                            <th>Delete</th>
-                        </tr>
-                    </thead>
-                </table>
-            </div>
-        </div>
+    <a class="popup btn btn-primary" href="/home/save/0" style="margin-bottom:20px; margin-top:20px;">Add New Employee</a>
+    <div class="table-container">
+        <table id="bookGrid" class="tablecontainer">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>BookId</th>
+                    <th>Name</th>
+                    <th>Published</th>
+                    <th>PageCount</th>
+                    <th>Rating</th>
+                    <th>Author</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+        </table>
     </div>
-</div>
-
-
-
