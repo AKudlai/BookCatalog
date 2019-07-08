@@ -31,7 +31,13 @@ $(document).ready(function () {
                 "data": "Authors",
                 "searchable": true,
                 render: function (data, type, full) {
-                    return data.join(', ');
+                    return data.map(function (authorObj) {
+                        var authorStr = authorObj.FullName;
+
+                        return authorStr
+                            ? ['<a class="popup" href="Author/EditAuthor/', authorObj.AuthorId, '">', authorStr, '</a>'].join('')
+                            : '';
+                    }).join(', ');
                 }
             },
 
@@ -56,9 +62,7 @@ $(document).ready(function () {
 
         "drawCallback": function () {
 
-            console.log("$('.tablecontainer a.popup')", $('.tablecontainer a.popup'));
-
-            // Edit book
+            // Opens modal
             $('.tablecontainer a.popup').on('click', function (e) {
                 e.preventDefault();
                 OpenPopup($(this).attr('href'));
@@ -120,27 +124,30 @@ $(document).ready(function () {
 // Child table format
 function format(d) {
     // `d` is the original data object for the row
-    return '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">' +
-        '<tr>' +
-        '<td>Book Title:</td>' +
-        '<td>' + d.Name + '</td>' +
-        '</tr>' +
-        '<tr>' +
-        '<td>Published:</td>' +
-        '<td>' + d.PublishDate + '</td>' +
-        '</tr>' +
-        '<td>Page Count:</td>' +
-        '<td>' + d.PageCount + '</td>' +
-        '</tr>' +
-        '<tr>' +
-        '<td>Rating:</td>' +
-        '<td>' + d.Rating + '</td>' +
-        '</tr>' +
-        '<tr>' +
-        '<td>Authors:</td>' +
-        '<td>' + d.Authors + '</td>' +
-        '</tr>' +
-        '</table>';
+    return [
+        '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">',
+            '<tr>',
+                '<td>Book Title:</td>',
+                '<td>', d.Name, '</td>',
+            '</tr>',
+            '<tr>',
+                '<td>Published:</td>',
+                '<td>', d.PublishDate, '</td>',
+            '</tr>',
+                '<td>Page Count:</td>',
+                '<td>', d.PageCount, '</td>',
+            '</tr>',
+            '<tr>',
+                '<td>Rating:</td>',
+                '<td>', d.Rating, '</td>',
+            '</tr>',
+            '<tr>',
+                '<td>Authors:</td>',
+                '<td>', d.Authors.map(function (authorObj) {
+                    return authorObj.FullName;
+                }).join(', '), '</td>',
+            '</tr>',
+        '</table>'].join('');
 }
 
 function DeleteData(BookId) {

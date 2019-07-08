@@ -20,6 +20,9 @@ namespace BookCatalog.Web.App_Start
             bundles.Add(new StyleBundle("~/Content/css/DataTables").Include(
                 "~/Content/DataTables/css/jquery.dataTables.min.css"));
 
+            bundles.Add(new StyleBundle("~/Content/css/select2").Include(
+                "~/Content/css/select2.min.css"));
+
             bundles.Add(new ScriptBundle("~/bundles/jquery")
                 .Include("~/Scripts/jquery-{version}.js"));
 
@@ -38,13 +41,14 @@ namespace BookCatalog.Web.App_Start
                 .Include("~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap")
-                .Include("~/Scripts/bootstrap.js"));          
+                .Include("~/Scripts/bootstrap.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/select2")
+                .Include("~/Scripts/select2.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/appscripts")
                 .Include("~/Scripts/AppScripts/BookCatalog.js",
                          "~/Sripts/AppScripts/Modal.js"));
-
-
         }
     }
 }

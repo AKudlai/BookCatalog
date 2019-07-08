@@ -18,6 +18,6 @@ namespace BookCatalog.Web.Models
 
         public int Rating { get; set; }
 
-        public string[] Authors { get; set; }
+        public IEnumerable<AuthorViewModel> Authors { get; set; }
     }
 }

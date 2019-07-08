@@ -41,13 +41,19 @@ namespace BookCatalog.Web.Controllers
             // Getting all Book data
             var bookData = unitOfWork.Books
                 .Find(x => true, x => x.Authors)
-                .Select(x => new BookViewModel {
-                                    BookId = x.BookId,
-                                    Name = x.Name,
-                                    PublishDate = x.PublishDate,
-                                    PageCount = x.PageCount,
-                                    Rating = x.Rating,
-                                    Authors = x.Authors.Select(f => f.FirstName + " " + f.LastName).ToArray()
+                .Select(x => new BookViewModel
+                {
+                    BookId = x.BookId,
+                    Name = x.Name,
+                    PublishDate = x.PublishDate,
+                    PageCount = x.PageCount,
+                    Rating = x.Rating,
+                    Authors = x.Authors.Select(f => new AuthorViewModel
+                    {
+                        AuthorId = f.AuthorId,
+                        FirstName = f.FirstName,
+                        LastName = f.LastName
+                    })
                 });
 
             //Sorting  
@@ -75,10 +81,10 @@ namespace BookCatalog.Web.Controllers
         public JsonResult DeleteBook(Guid? id)
         {
             if (id == null)
-                    return Json(data: "Not Deleted", behavior: JsonRequestBehavior.AllowGet);
+                return Json(data: "Not Deleted", behavior: JsonRequestBehavior.AllowGet);
             unitOfWork.Books.Remove(id);
             unitOfWork.SaveChanges();
-                    return Json(data: "Deleted", behavior: JsonRequestBehavior.AllowGet);
+            return Json(data: "Deleted", behavior: JsonRequestBehavior.AllowGet);
         }
 
         [HttpGet]
@@ -86,7 +92,21 @@ namespace BookCatalog.Web.Controllers
         {
             var bookData = unitOfWork.Books.Get(id);
 
-            return View(bookData);
+            return View(new BookViewModel
+            {
+                BookId = bookData.BookId,
+                Name = bookData.Name,
+                PageCount = bookData.PageCount,
+                PublishDate = bookData.PublishDate,
+                Rating = bookData.Rating,
+                Authors = bookData.Authors
+                    .Select(a => new AuthorViewModel
+                    {
+                        AuthorId = a.AuthorId,
+                        FirstName = a.FirstName,
+                        LastName = a.LastName
+                    })
+            });
         }
 
         [HttpPost]
@@ -96,9 +116,9 @@ namespace BookCatalog.Web.Controllers
             if (ModelState.IsValid)
             {
                 if (book != null)
-                   {
+                {
                     unitOfWork.Books.Update(book);
-                   };
+                };
                 unitOfWork.SaveChanges();
                 status = true;
             }
