@@ -561,7 +561,7 @@
     <Content Include="Views\Book\EditBook.cshtml" />
     <Content Include="Views\Author\EditAuthor.cshtml" />
     <Content Include="Scripts\tsconfig.json" />
-    <Content Include="Views\Book\_AddBookView.cshtml" />
+    <Content Include="Views\Book\_AddBook.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
