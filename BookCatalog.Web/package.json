@@ -2,8 +2,11 @@
   "version": "1.0.0",
   "name": "asp.net",
   "private": true,
-  "devDependencies": {},
-  "dependencies": {
+  "devDependencies": {
+    "@types/knockout": "^3.4.66",
     "knockout": "^3.5.0"
+  },
+  "dependencies": {
+    "@types/node": "^12.7.2"
   }
 }
