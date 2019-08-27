@@ -124,5 +124,11 @@ namespace BookCatalog.Web.Controllers
             }
             return new JsonResult { Data = new { status = status } };
         }
+
+        [HttpGet]
+        public ActionResult AddBook()
+        {
+            return View();
+        }
     }
 }

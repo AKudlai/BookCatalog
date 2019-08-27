@@ -562,7 +562,7 @@
     <Content Include="Views\Book\EditBook.cshtml" />
     <Content Include="Views\Author\EditAuthor.cshtml" />
     <Content Include="Scripts\tsconfig.json" />
-    <Content Include="Views\Book\_AddBook.cshtml" />
+    <Content Include="Views\Book\AddBook.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -591,16 +591,15 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="Scripts\AppScripts\book-catalog-controller.ts" />
-    <TypeScriptCompile Include="Scripts\AppScripts\Models\author-model.ts" />
-    <TypeScriptCompile Include="Scripts\AppScripts\Models\book-catalog-business.ts" />
-    <TypeScriptCompile Include="Scripts\AppScripts\Models\book-catalog-service.ts" />
-    <TypeScriptCompile Include="Scripts\AppScripts\Models\book-model.ts" />
+    <TypeScriptCompile Include="Scripts\AppScripts\BookCatalog\book-catalog-controller.ts" />
+    <TypeScriptCompile Include="Scripts\AppScripts\BookCatalog\Models\author-model.ts" />
+    <TypeScriptCompile Include="Scripts\AppScripts\BookCatalog\book-catalog-business.ts" />
+    <TypeScriptCompile Include="Scripts\AppScripts\BookCatalog\book-catalog-service.ts" />
+    <TypeScriptCompile Include="Scripts\AppScripts\BookCatalog\Models\book-model.ts" />
     <TypeScriptCompile Include="Scripts\index.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\jquery-validation-unobtrusive\jquery-validation-unobtrusive.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\jquery.validation\jquery.validation.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
-    
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
