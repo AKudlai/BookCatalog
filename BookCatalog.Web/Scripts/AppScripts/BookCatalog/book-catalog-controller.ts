@@ -1,16 +1,16 @@
-﻿import { BookCatalogBusiness } from "./book-catalog-business"
+﻿import { BookCatalogBusiness } from "./book-catalog-business";
+import { Book } from "./Models/book-model"
 
 class BoolCatalogController {
 
-    private business: BookCatalogBusiness;
+    readonly business: BookCatalogBusiness;
+    readonly book: Book;
 
-    public getModel(): any {
-        // return this.business.();
-    }
-
-    //for the Author dropdown initialization
-    InitializeAuthorControl()
-    {
-        
+    constructor(book: Book, business: BookCatalogBusiness, doc: HTMLDocument) {
+        this.book = new Book();
+        this.business = business;
+        doc.onload = () => {
+            ko.applyBindings(this.book);
+        }
     }
 }

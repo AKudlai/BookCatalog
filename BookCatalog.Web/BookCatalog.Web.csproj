@@ -572,6 +572,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Scripts\AppScripts\Infrastructure\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BookCatalog.Contracts\BookCatalog.Contracts.csproj">

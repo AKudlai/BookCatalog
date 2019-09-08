@@ -44,7 +44,14 @@ namespace BookCatalog.Web.App_Start
 
             bundles.Add(new ScriptBundle("~/bundles/appscripts")
                 .Include("~/Scripts/AppScripts/BookCatalog.js",
-                         "~/Sripts/AppScripts/Modal.js"));
+                         "~/Scripts/AppScripts/Modal.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/add-book").Include(
+                "~/Scripts/AppScripts/BookCatalog/Models/*.js",
+                "~/Scripts/AppScripts/BookCatalog/book-catalog-business.js",
+                "~/Scripts/AppScripts/BookCatalog/book-catalog-controller.js",
+                "~/Scripts/AppScripts/BookCatalog/book-catalog-service.js"
+            ));
         }
     }
 }

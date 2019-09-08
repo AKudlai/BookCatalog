@@ -130,5 +130,22 @@ namespace BookCatalog.Web.Controllers
         {
             return View();
         }
+
+
+        [HttpPut]
+        public ActionResult AddBook(Book book)
+        {
+            bool status = false;
+            if (ModelState.IsValid)
+            {
+                if (book != null)
+                {
+                    unitOfWork.Books.Add(book);
+                };
+                unitOfWork.SaveChanges();
+                status = true;
+            }
+            return new JsonResult { Data = new { status = status } };
+        }
     }
 }

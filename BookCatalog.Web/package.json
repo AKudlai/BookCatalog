@@ -7,6 +7,9 @@
     "knockout": "^3.5.0"
   },
   "dependencies": {
-    "@types/node": "^12.7.2"
+    "@types/knockout.mapping": "^2.0.35",
+    "@types/node": "^12.7.2",
+    "amd-loader": "0.0.8",
+    "requirejs": "^2.3.6"
   }
 }
