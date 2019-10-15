@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width">
     <title>@ViewBag.Title Book Catalog</title>
     @*<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css" />
-    <link href="~/Content/themes/base/jquery-ui.min.css" rel="stylesheet" />*@
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css" />
+        <link href="~/Content/themes/base/jquery-ui.min.css" rel="stylesheet" />*@
     @Styles.Render("~/Content/css/DataTables")
     @Styles.Render("~/Content/css")
     @Styles.Render("~/Content/chosen")
@@ -30,7 +30,7 @@
     @Scripts.Render("~/bundles/datatables")
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/select2")
-    <script src="~/node_modules/requirejs/require.js"></script>
+    <script src="~/node_modules/requirejs/require.js" data-main="../../Scripts/AppScripts/require-config"></script>
     @Scripts.Render("~/bundles/appscripts")
     @Scripts.Render("~/bundles/add-book")
 

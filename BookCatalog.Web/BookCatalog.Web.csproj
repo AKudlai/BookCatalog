@@ -597,6 +597,7 @@
     <TypeScriptCompile Include="Scripts\AppScripts\BookCatalog\book-catalog-business.ts" />
     <TypeScriptCompile Include="Scripts\AppScripts\BookCatalog\book-catalog-service.ts" />
     <TypeScriptCompile Include="Scripts\AppScripts\BookCatalog\Models\book-model.ts" />
+    <TypeScriptCompile Include="Scripts\AppScripts\require-config.ts" />
     <TypeScriptCompile Include="Scripts\index.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\jquery-validation-unobtrusive\jquery-validation-unobtrusive.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\jquery.validation\jquery.validation.d.ts" />
