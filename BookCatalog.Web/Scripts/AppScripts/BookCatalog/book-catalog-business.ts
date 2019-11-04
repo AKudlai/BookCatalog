@@ -1,8 +1,7 @@
-﻿import * as ko from "knockout";
-import { Book } from "./Models/book-model";
-import { BookCatalogService } from "./book-catalog-service";
+﻿///<reference path="Models/book-model.ts" />
+///<reference path="book-catalog-service.ts"/>
 
-export class BookCatalogBusiness {
+class BookCatalogBusiness {
     
     readonly model: Book; 
     readonly service: BookCatalogService;
@@ -18,5 +17,9 @@ export class BookCatalogBusiness {
         const jsModel = ko.toJS(this.model);
 
         return this.service.addBook(jsModel);
+    }
+
+    public getModel() {
+        return this.model;
     }
 }

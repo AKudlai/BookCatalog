@@ -1,6 +1,6 @@
-﻿import * as ko from "knockout";
+﻿///<reference path="../../../typings/knockout/knockout.d.ts"> 
 
-export class Book {
+class Book {
     constructor() {
         this.name = ko.observable<string>("");
         this.publishDate = ko.observable<string>("");

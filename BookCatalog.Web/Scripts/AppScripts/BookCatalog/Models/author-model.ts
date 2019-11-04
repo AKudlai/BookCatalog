@@ -1,4 +1,4 @@
-﻿import * as ko from "knockout";
+﻿///<reference path="../../../typings/knockout/knockout.d.ts" /> 
 
 class Author {
     constructor() {
@@ -12,5 +12,4 @@ class Author {
     public lastName: KnockoutObservable<string>;
 
     public bookCount: KnockoutObservable<number>;
-
 }

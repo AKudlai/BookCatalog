@@ -1,4 +1,7 @@
+///<reference path="./BookCatalog/book-add-modal.ts"/>
+
 $(document).ready(function () {
+    var self = this;
     var bookTable = $("#bookGrid").DataTable({
 
         "serverSide": true, // for process server side
@@ -77,6 +80,8 @@ $(document).ready(function () {
         $pageContent.load(pageUrl, function (response) {
 
             var $popupForm = $('#popupForm', $pageContent);
+
+            BookAddModal.initialize();
 
             $popupForm.on('submit', function (event) {
                 event.preventDefault();

@@ -1,16 +1,14 @@
-﻿import { BookCatalogBusiness } from "./book-catalog-business";
-import { Book } from "./Models/book-model"
+﻿///<reference path="book-catalog-business.ts" /> 
 
-class BoolCatalogController {
+class BookCatalogController {
 
     readonly business: BookCatalogBusiness;
-    readonly book: Book;
 
-    constructor(book: Book, business: BookCatalogBusiness, doc: HTMLDocument) {
-        this.book = new Book();
+    constructor(business: BookCatalogBusiness) {
         this.business = business;
-        doc.onload = () => {
-            ko.applyBindings(this.book);
+        
+        document.onload = () => {
+            ko.applyBindings(this.business.getModel());
         }
     }
 }

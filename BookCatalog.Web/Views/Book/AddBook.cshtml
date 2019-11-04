@@ -8,26 +8,26 @@
 <form>
     <div class="form-group">
         <label for="book-name"></label>
-        <input id="book-name" type="text" data-bind="value: name" />
+        <input id="book-name" type="text" data-bind="textInput: name" />
     </div>
     <div class="form-group">
         <label for="publish-date"></label>
-        <input id="publish-date" type="text" data-bind="value: publishDate" />
+        <input id="publish-date" type="text" data-bind="textInput: publishDate" />
     </div>
     <div class="form-group">
         <label for="page-count"></label>
-        <input id="page-count" type="text" data-bind="value: pageCount" />
+        <input id="page-count" type="text" data-bind="textInput: pageCount" />
     </div>
     <div class="form-group">
         <label for="rating"></label>
-        <input id="rating" type="text" data-bind="value: rating" />
+        <input id="rating" type="text" data-bind="textInput: rating" />
     </div>
     @*<div class="form-group">
             <label for="authors"></label>
-            <input id="authors" type="text" data-bind="value: authors" />
+            <input id="authors" type="text" data-bind="textInput: authors" />
         </div>*@
     <div>
-        <input type="submit" data-bind="click: addBook" value="Save" />
+        <input type="submit" data-bind="click: Business.addBook" value="Save" />
     </div>
 </form>
 

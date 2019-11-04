@@ -514,6 +514,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\knockout\knockout-3.4.2.debug.js" />
     <Content Include="Scripts\knockout\knockout-3.4.2.js" />
+    <Content Include="Scripts\knockout\knockout-mapping.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\popper-utils.js" />
     <Content Include="Scripts\popper-utils.min.js" />
@@ -593,6 +594,7 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="Scripts\AppScripts\BookCatalog\book-add-modal.ts" />
     <TypeScriptCompile Include="Scripts\AppScripts\BookCatalog\book-catalog-controller.ts" />
     <TypeScriptCompile Include="Scripts\AppScripts\BookCatalog\Models\author-model.ts" />
     <TypeScriptCompile Include="Scripts\AppScripts\BookCatalog\book-catalog-business.ts" />

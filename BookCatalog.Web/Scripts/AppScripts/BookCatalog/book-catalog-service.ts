@@ -1,4 +1,4 @@
-﻿export class BookCatalogService {
+﻿class BookCatalogService {
         
     readonly addUrl: string = "/Book/AddBook";
 

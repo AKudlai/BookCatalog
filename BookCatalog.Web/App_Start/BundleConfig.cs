@@ -42,6 +42,10 @@ namespace BookCatalog.Web.App_Start
             bundles.Add(new ScriptBundle("~/bundles/select2")
                 .Include("~/Scripts/select2.min.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/knockout")
+                .Include("~/Scripts/knockout/knockout-*")
+                .Include("~/Scripts/knockout-mapping/"));
+
             bundles.Add(new ScriptBundle("~/bundles/appscripts")
                 .Include("~/Scripts/AppScripts/BookCatalog.js",
                          "~/Scripts/AppScripts/Modal.js"));
@@ -50,7 +54,8 @@ namespace BookCatalog.Web.App_Start
                 "~/Scripts/AppScripts/BookCatalog/Models/*.js",
                 "~/Scripts/AppScripts/BookCatalog/book-catalog-business.js",
                 "~/Scripts/AppScripts/BookCatalog/book-catalog-controller.js",
-                "~/Scripts/AppScripts/BookCatalog/book-catalog-service.js"
+                "~/Scripts/AppScripts/BookCatalog/book-catalog-service.js",
+                "~/Scripts/AppScripts/BookCatalog/book-add-modal.js"
             ));
         }
     }
