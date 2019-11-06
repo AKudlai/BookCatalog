@@ -1,4 +1,5 @@
-﻿///<reference path="book-catalog-business.ts" /> 
+﻿///<reference path="book-catalog-business.ts" />
+///<reference path="../../typings/jquery/jquery.d.ts" />
 
 class BookCatalogController {
 
@@ -11,4 +12,11 @@ class BookCatalogController {
             ko.applyBindings(this.business.getModel());
         }
     }
+
+    public addBook = (): void => {
+        // To-Do add validation.
+        this.business.addBook();
+    }
+
+
 }
