@@ -1,4 +1,4 @@
-﻿///<reference path="Models/book-model.ts" />
+﻿///<reference path="Models/book-model.ts"/>
 ///<reference path="book-catalog-service.ts"/>
 
 class BookCatalogBusiness {
@@ -19,7 +19,7 @@ class BookCatalogBusiness {
         return this.service.addBook(jsModel);
     }
 
-    public getModel() {
+    getModel() {
         return this.model;
     }
 }

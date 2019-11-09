@@ -1,6 +1,5 @@
 ﻿namespace BookAddModal {
     export var controller: BookCatalogController;
-    let popupForm: string = '#popupForm';
 
     export function initialize(): void {
         let service = new BookCatalogService();

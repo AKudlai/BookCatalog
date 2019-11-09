@@ -1,18 +1,18 @@
-﻿///<reference path="../../../typings/knockout/knockout.d.ts"> 
+﻿///<reference path="../../../typings/knockout/knockout.d.ts">
 
 class Book {
     constructor() {
-        this.name = ko.observable<string>("");
-        this.publishDate = ko.observable<string>("");
+        this.name = ko.observable<string>('');
+        this.publishDate = ko.observable<string>('');
         this.pageCount = ko.observable<number>();
         this.rating = ko.observable<number>();
     }
 
-    public name: KnockoutObservable<string>;
+    name: KnockoutObservable<string>;
 
-    public publishDate: KnockoutObservable<string>;
+    publishDate: KnockoutObservable<string>;
 
-    public pageCount: KnockoutObservable<number>;
+    pageCount: KnockoutObservable<number>;
 
-    public rating: KnockoutObservable<number>;
+    rating: KnockoutObservable<number>;
 }

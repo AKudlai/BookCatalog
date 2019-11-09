@@ -3,40 +3,40 @@
   Layout = null;
 }
 
-<div class="modal fade" id="addBookModal" role="dialog" aria-hidden="true" style="overflow: hidden">
+<div class="modal fade" id="add_book_modal" role="dialog" aria-labelledby="add_book_modal_label" aria-hidden="true" style="overflow: hidden">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <div>
-          <h5 class="col-md-11 modal-title" id="">Add Book</h5>
+          <h5 class="modal-title" id="add_book_modal_label">Add Book</h5>
         </div>
-        <div class="col-md-1">
-          <a data-dismiss="modal" aria-hidden="true"><i class="fa fa-close"></i></a>
-        </div>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
       <div class="modal-body">
-        <form id="add-book-form">
+        <form id="add_book_form">
           <div class="form-group">
-            <label for="book-name"></label>
-            <input id="book-name" type="text" data-bind="textInput: name" />
+            <label for="book-name" class="col-form-label"></label>
+            <input id="book-name" class="form-control" type="text" data-bind="textInput: name" />
           </div>
           <div class="form-group">
-            <label for="publish-date"></label>
-            <input id="publish-date" type="text" data-bind="textInput: publishDate" />
+            <label for="publish-date" class="col-form-label"></label>
+            <input id="publish-date" class="form-control" type="text" data-bind="textInput: publishDate" />
           </div>
           <div class="form-group">
-            <label for="page-count"></label>
-            <input id="page-count" type="text" data-bind="textInput: pageCount" />
+            <label for="page-count" class="col-form-label"></label>
+            <input id="page-count" class="form-control" type="text" data-bind="textInput: pageCount" />
           </div>
           <div class="form-group">
-            <label for="rating"></label>
-            <input id="rating" type="text" data-bind="textInput: rating" />
+            <label for="rating" class="col-form-label"></label>
+            <input id="rating" class="form-control" type="text" data-bind="textInput: rating" />
           </div>
           @*<div class="form-group">
-                <label for="authors"></label>
-                <input id="authors" type="text" data-bind="textInput: authors" />
-            </div>*@
-          </form>
+            <label for="authors" class="col-form-label"></label>
+            <input id="authors" class="form-control" type="text" data-bind="textInput: authors" />
+          </div>*@
+        </form>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             <button type="button" class="btn btn-primary" data-bind="click: addBook" >Save</button>
